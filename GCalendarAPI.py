@@ -34,11 +34,12 @@ print("THIS IS THE EVENT LIST")
 print(json.dumps(getEvent, indent = 2))
 
 currentDate = date.today()
+dateOfcurrentEvent = ""
 for event in range(len(getEvent['items'])):
     print("\nTHIS EVENT:")
     currentEvent = getEvent['items'][event]
     try:
-        print(currentEvent['start'])
+        print(currentEvent['start']['dateTime'].split('T'))
     except KeyError as keyError: 
         continue
     
